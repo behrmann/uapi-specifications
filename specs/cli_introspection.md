@@ -165,7 +165,10 @@ long-options. Short options are usually followed by a single chracters, whereas
 long options can be a longer string. Short otions may be followed by multiple
 characters, but this is discouraged.
 
-`argument` defines the argument type TODO
+`argument` defines the argument type, which is one of the strings:
+-`no_argument`,
+-`required_argument`, or
+-`optional_argument`.
 
 `help` is a string that defines the help text of the option.
 
@@ -187,7 +190,7 @@ Value objects describe a value that is passed as an argument, either to a
 {
     "name": "myname",
     "help": "help text",
-    "default": True
+    "default": true
 }
 ```
 
