@@ -67,7 +67,7 @@ The command object is recursively defined as follows.
     "abstract": ["paragraph1", "paragraph2", …],
     "postscript": ["paragraph1", "paragraph2", …],
     "options": [<option object>, …],
-    "verbs" : [<command >, …]
+    "verbs": [<command >, …]
 }
 ```
 
