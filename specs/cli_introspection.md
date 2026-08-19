@@ -85,7 +85,7 @@ builtin-in features of this program.
 
 `abstract` and `postscript` define arrays of strings that are shown respectively
 before and after the description of options in the program's help output. These
-arrays may be empty.
+arrays may be empty. Each element of the array represents a paragraph of text.
 
 `options` define a program's arguments and options and are described in a section below.
 
