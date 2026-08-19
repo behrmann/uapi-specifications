@@ -148,6 +148,7 @@ Value objects describe a value that is passed as an argument, either to a
     "help": "help text",
     "default": True
 }
+```
 
 All keys except `name` are optional and are treated as empty string or false
 when missing.
