@@ -64,7 +64,7 @@ The command object is recursively defined as follows.
     "version": "myversion",
     "features": ["feature1", "feature2", …]
     "abstract": ["paragraph1", "paragraph2", …],
-    "footer": ["paragraph1", "paragraph2", …],
+    "postscript": ["paragraph1", "paragraph2", …],
     "options": [<option object>, …],
     "verbs" : [<command >, …]
 }
@@ -83,7 +83,7 @@ UAPI.10 Version Format Specification-compatible.
 `features` defines an array of strings, that can be empty, that define
 builtin-in features of this program.
 
-`abstract` and `footer` define arrays of strings that are shown respectively
+`abstract` and `postscript` define arrays of strings that are shown respectively
 before and after the description of options in the program's help output. These
 arrays may be empty.
 
