@@ -156,7 +156,8 @@ explicitly made.
     "help": "Show this help",
     "group": [""],
     "conflicts": [],
-    "values": [<value object>]
+    "values": [<value object>],
+    "section": "option block 1"
 }
 ```
 
@@ -188,6 +189,8 @@ this option may not be called together with.
 
 `values` is an array of *value objects* describing the values this option may
 take. Value objects are described in a section below.
+
+`section` is a string to visually group options into separate lists.
 
 ### Value objects
 
