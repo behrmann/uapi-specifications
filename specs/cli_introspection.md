@@ -68,7 +68,8 @@ The command object is recursively defined as follows.
     "postscript": ["paragraph1", "paragraph2", …],
     "options": [<option object>, …],
     "verbs": [<command >, …],
-    "documentation": ["doc1", …]
+    "documentation": ["doc1", …],
+    `package`: "myproject"
 }
 ```
 
@@ -100,6 +101,9 @@ that should not be larger than 16.
 
 `documentation` is an array of string values describing URIs referencing
 documentation for this command, see `man:uri(7)`for a description of valid URIs.
+
+`package` is a string describing what this command belongs to. This may the
+package that installed it or the project that produced it.
 
 ### Argspec objects
 
