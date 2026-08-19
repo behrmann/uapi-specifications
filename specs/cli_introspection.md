@@ -36,13 +36,13 @@ The schema is defines as
 
 ```json
 {
-    "mediaType" : "application/vnd.io.systemd.cli-introspection-0",
+    "mediaType" : "application/vnd.uapi-group.cli-introspection-0",
     "commands": [<command object>, …]
 }
 ```
 
 where `mediaType` is the fixed string
-`application/vnd.io.systemd.cli-introspection-0` and `commands` is a non-empty
+`application/vnd.uapi-group.cli-introspection-0` and `commands` is a non-empty
 JSON array of *command objects*.
 
 Further additions to this specification will only be additive and non-backwards
