@@ -61,6 +61,7 @@ The command object is recursively defined as follows.
 ```json
 {
     "names" : ["name1", "name2", …],
+    "argspec": ["value1", "value2", …]
     "version": "myversion",
     "features": ["feature1", "feature2", …]
     "abstract": ["paragraph1", "paragraph2", …],
@@ -77,6 +78,9 @@ array when missing.
 of that array is the primary name of that command. Further names can be added as
 aliases, e.g. for backwards-compatibility.
 
+`argspec` is an array of argspec objects describing the arguments to the command
+after the name of the command, i.e. `argv` excluding the element with index 0.
+
 `version` defines the version string of the program. This string should be a
 UAPI.10 Version Format Specification-compatible.
 
@@ -92,6 +96,43 @@ arrays may be empty. Each element of the array represents a paragraph of text.
 `verbs` are command objects that describe a program's verbs, also called
 subcommands. Verbs may recursively define further verbs up to a maximum depth
 that should not be larger than 16.
+
+### Argspec objects
+
+Argspec objects describe the arguments passed to the program, specifically in
+what order arguments, verbs and options are passed to the program.
+
+```json
+{
+    "name": "myname",
+    "metavar": "METAVAR",
+    "type": "argument",
+    "optional": true,
+    "default": null
+}
+```
+
+All keys except `name` and `type` are required and are treated as empty string,
+false or null if missing.
+
+`name` is a non-empty string describing the internal name of a value.
+
+`metavar` is a string describing the name that is shown in the argspec of the
+command. If it is empty, it defaults to the value of `name`.
+
+`type` is a string describing what the argument is. It is either of
+- `argument`, a direct argument to the command,
+- `option`, which is an option from the `options` array of a command, or
+- `verb`, which is a verb from the `verbs` array of a command.
+
+`optional` is a boolean describing whether an argspec object of type `argument`
+or `verb` must be passed or not. `optional` is ignored for argspec objects of
+type `option`.
+
+`default` is a string or null describing what the default value for this
+argument is. `null`, the default, means there is no default. `default` is
+ignored for argspec objects of type `option`. For argspec objects of type `verb`
+a non-`null` value must be a `name` of a commands object in the verbs array.
 
 ### Option objects
 
