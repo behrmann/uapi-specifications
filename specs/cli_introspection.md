@@ -67,7 +67,8 @@ The command object is recursively defined as follows.
     "abstract": ["paragraph1", "paragraph2", …],
     "postscript": ["paragraph1", "paragraph2", …],
     "options": [<option object>, …],
-    "verbs": [<command >, …]
+    "verbs": [<command >, …],
+    "documentation": ["doc1", …]
 }
 ```
 
@@ -96,6 +97,9 @@ arrays may be empty. Each element of the array represents a paragraph of text.
 `verbs` are command objects that describe a program's verbs, also called
 subcommands. Verbs may recursively define further verbs up to a maximum depth
 that should not be larger than 16.
+
+`documentation` is an array of string values describing URIs referencing
+documentation for this command, see `man:uri(7)`for a description of valid URIs.
 
 ### Argspec objects
 
