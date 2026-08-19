@@ -69,7 +69,7 @@ The command object is recursively defined as follows.
     "options": [<option object>, …],
     "verbs": [<command >, …],
     "documentation": ["doc1", …],
-    `package`: "myproject"
+    "package": "myproject"
 }
 ```
 
