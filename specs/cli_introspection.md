@@ -272,18 +272,36 @@ either to a positional argument or an optional argument.
 }
 ```
 
-All keys except `type` and `name` are optional and are treated as empty string
-or false when missing.
+All keys except `type` and one of `value`, `dynamic` or `missing` are optional
+and are treated as empty string or false when missing.
 
 `type` is the fixed string `value` and signals that this is a value object,
 describing an argument value.
 
 `value` is a string describing a possible value.
 
+`dynamic` is a non-empty array of strings describing a sequence of commands,
+that can be called to generate multiple values.
+This is relevant for the dynamic generation of completion candidates during
+command line completion.
+The current input for the argument,
+if any otherwise an empty string,
+will be passed as first and only argument to the first element of the array and
+its standard output stream will be passed as input stream to the next element
+and so on with the standard output stream of the last element defining the
+values,
+one per line.
+
+`missing` is a boolean signalling that some values are missing from the
+description.
+
 `help` is a string describing the help text that should be shown for the value.
 
 `default` is a boolean describing whether this value is the default value for
 the option this is a value for.
+
+If multiple of `value`, `dynamic` and `missing` are defined,
+`missing` has the highest precedence, followed by `value` and `dynamic`.
 
 ## Example
 
