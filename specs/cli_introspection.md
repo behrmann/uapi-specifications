@@ -70,6 +70,7 @@ The command object is recursively defined as follows.
     "features": ["feature1", "feature2", …]
     "abstract": ["paragraph1", "paragraph2", …],
     "postscript": ["paragraph1", "paragraph2", …],
+    "help": "short help"
     "options": [<option object>, …],
     "verbs": [<command >, …],
     "documentation": ["doc1", …],
@@ -97,6 +98,10 @@ program.
 `abstract` and `postscript` define arrays of strings that are shown respectively
 before and after the description of options in the program's help output. Each
 element of the array represents a paragraph of text.
+
+`help` defines the help text of the command. This is useful for single-line
+usage information as well as for short descriptions of verbs in the list of
+options.
 
 `options` define a CLI's positional arguments and options and are described in a section below.
 
