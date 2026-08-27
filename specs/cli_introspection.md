@@ -73,7 +73,8 @@ The command object is recursively defined as follows.
     "options": [<option object>, …],
     "verbs": [<command >, …],
     "documentation": ["doc1", …],
-    "project": "myproject"
+    "project": "myproject",
+    "isDeprecated": false
 }
 ```
 
@@ -110,6 +111,8 @@ widely supported in modern terminals.
 
 `project` is a string describing what this command belongs to. This may the
 package that installed it or the project that produced it.
+
+`isDeprecated` is a boolean describing whether the command has been
 
 ### Argspec objects
 
@@ -162,7 +165,8 @@ explicitly made.
     "help": "Show this help",
     "group": [""],
     "values": [<value object>],
-    "section": "option block 1"
+    "section": "option block 1",
+    "isDeprecated": false
 }
 ```
 
@@ -194,6 +198,8 @@ take. Value objects are described in a section below.
 
 `section` is a string to visually group options into separate lists.
 
+`isDeprecated` is a boolean describing whether this option has been deprecated.
+
 ### Value objects
 
 Value objects describe a value that is passed as an argument, either to a
@@ -203,7 +209,8 @@ Value objects describe a value that is passed as an argument, either to a
 {
     "name": "myname",
     "help": "help text",
-    "default": true
+    "default": true,
+    "isDeprecated": false
 }
 ```
 
