@@ -194,7 +194,8 @@ This is only for display-purposes.
 
 `values` is an array of *value objects* describing the values this option may
 take.
-An empty array describes an argument that is a single arbitrary word.
+An empty array describes an argument that is a single arbitrary word with no
+further documented semantic.
 Value objects are described in a section below.
 
 `isDeprecated` is a boolean describing whether this option has been deprecated.
@@ -252,7 +253,8 @@ This is only for display-purposes.
 
 `values` is an array of *value objects* describing the values this option may
 take.
-An empty array describes an argument that is a single arbitrary word.
+An empty array describes an argument that is a single arbitrary word with no
+further documented semantic.
 Value objects are described in a section below.
 
 `isDeprecated` is a boolean describing whether this option has been deprecated.
