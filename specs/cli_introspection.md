@@ -287,11 +287,9 @@ that can be called to generate multiple values.
 This is relevant for the dynamic generation of completion candidates during
 command line completion.
 The current input for the argument,
-if any otherwise an empty string,
-will be passed as first and only argument to the first element of the array and
-its standard output stream will be passed as input stream to the next element
-and so on with the standard output stream of the last element defining the
-values,
+if any,
+otherwise an empty string will be passed as first and only argument.
+The standard output stream of the command defines the values,
 one per line.
 
 `missing` is a boolean signalling that some values are missing from the
