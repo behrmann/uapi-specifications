@@ -274,15 +274,27 @@ either to a positional argument or an optional argument.
 }
 ```
 
-All keys except `type` and one of `value`, `dynamic` or `missing` are optional
-and are treated as empty string or false when missing.
+All keys except `type` and one of `value`, `category`, `dynamic` or `missing`
+are optional and are treated as empty string or false when missing.
 
 `type` is the fixed string `value` and signals that this is a value object,
 describing an argument value.
 
-`value` is a string describing a possible value.
+`value` is a string describing a possible static value.
 
-`dynamic` is a non-empty array of strings describing a sequence of commands,
+`category` is a string describing a category of values:
+- `path`, any filesystem path,
+- `file`, a filesystem path to a regular file,
+- `dir`, a filesystem path to a directory,
+- `pid`, a PID,
+- `uid`, a numeric UID,
+- `gid`, a numeric GID,
+- `username`, a user's name,
+- `groupname`, a group's name,
+- `hostname`, a hosts' name, and
+- `unit`, a systemd unit's name.
+
+`dynamic` is a non-empty string describing a commands,
 that can be called to generate multiple values.
 This is relevant for the dynamic generation of completion candidates during
 command line completion.
