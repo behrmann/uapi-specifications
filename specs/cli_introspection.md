@@ -22,8 +22,8 @@ equivalent option.
 
 This output can be used,
 among other things,
-to check whether a program has a given option or to automatically generate
-command-line completion for different shells.
+to check whether a program has a given option
+or to automatically generate documentation or command-line completion for different shells.
 
 ## Target Audience
 
@@ -31,8 +31,7 @@ The target audience for this specification are:
 
 * People writing runnable programs that have command-line interfaces,
 * authors of tab-completion helpers, and
-* people interested in automatic testing of documentation and self-documenting
-  interfaces.
+* people interested in self-documenting interfaces and automatic testing of documentation.
 
 ## The Schema
 
@@ -211,8 +210,8 @@ Argument objects describe positional arguments that are not verbs.
 }
 ```
 
-All keys except `type` and `id` are optional and are treated as empty, false, or
-zero when missing.
+All keys except `type` and `id` are optional
+and are treated as empty, false, or zero when missing.
 
 `type` is the fixed string `"argument"` and signals that this is an argument object.
 
@@ -295,7 +294,7 @@ since it would be impossible to distinguish the value from the other options.
 -"`optional`".
 When "`yes`", the option must be followed by a value.
 When "`optional`", the option may be followed by a value.
-// TODO: describe how to the presence or not of a value is figured out.
+// TODO: describe how the presence or not of a value is figured out.
 When "`no`", the option takes no value.
 
 `help` is a string that defines the help text of the option.
@@ -321,13 +320,12 @@ option can be repated.
 A value of 0 indictaes that the option can only be used once.
 Use -1 for arbitrary amount of repetitions.
 
-`conflicts` is an array of strings describing globs of `id`s, that conflict with
-this option.
+`conflicts` is an array of strings describing globs of `id`s that conflict with this option.
 An empty array means that this option does not conflict with anything.
 
-`conflicts` is an array of string describing globs of `id`s that are required
-together with this option.
-An empty array means that this option does not requite any other option.
+`requires` is an array of string describing globs of `id`s
+that are required together with this option.
+An empty array means that this option does not require any other options.
 
 ### Value objects
 
