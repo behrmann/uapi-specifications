@@ -1,5 +1,5 @@
 ---
-title: UAPI.X CLI-Introspection Specification
+title: UAPI.X CLI-Introspection Specification [DRAFT]
 category: Interfaces
 layout: default
 version: 0.0
@@ -19,6 +19,9 @@ aliases:
 This document defines a JSON schema defining a machine-readable equivalent of
 what programs commonly output when they are called with the `--help` or an
 equivalent option.
+
+[!WARNING]
+This specification is still in draft state.
 
 This output can be used,
 among other things,
