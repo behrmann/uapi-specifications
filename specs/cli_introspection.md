@@ -104,7 +104,8 @@ The command object is recursively defined as follows.
   "synopsis": [],
   "documentation": ["doc1", …],
   "project": "myproject",
-  "isDeprecated": false
+  "isDeprecated": false,
+  "isExperimental": false
 }
 ```
 
@@ -169,6 +170,10 @@ This may the package that installed it or the project that produced it.
 `isDeprecated` is a boolean describing whether the command has been deprecated
 and its use should be avoided.
 
+`isExperimental` is a boolean describing whether the command is experimental.
+If true, the details of how the command operates may change in the future,
+or it may even be removed.
+
 #### `help` vs. `abstract` and `postscript`
 
 Both `help` as well as `abstract` and `postscript` define output that is
@@ -206,6 +211,7 @@ Argument objects describe positional arguments that are not verbs.
   "values": [<value object>],
   "isRequired": false,
   "isDeprecated": false,
+  "isExperimental": false,
   "repeatable": 0,
 }
 ```
@@ -235,7 +241,8 @@ Value objects are described in a section below.
 `isRequired` specifies whether this positional argument
 must be present in the command line.
 
-`isDeprecated` is a boolean describing whether this argument has been deprecated.
+`isDeprecated` and `isExperimental` are booleans describing whether this argument
+has been deprecated or is experimental, with similar meaning as for *command objects*.
 
 `repeatable` is an integer describing how many times after a first use the
 option can be repated.
@@ -257,6 +264,7 @@ Option objects describe options.
   "sections": [""],
   "values": [<value object>],
   "isDeprecated": false,
+  "isExperimental": false,
   "reapeatable": 0,
   "conflicts": [],
   "requires": [],
@@ -313,7 +321,8 @@ An empty array describes an argument that is a single arbitrary word with no
 further documented semantic.
 Value objects are described in a section below.
 
-`isDeprecated` is a boolean describing whether this option has been deprecated.
+`isDeprecated` and `isExperimental` are booleans describing whether this option
+has been deprecated or is experimental, with similar meaning as for *command objects*.
 
 `repeatable` is an integer describing how many times after a first use the
 option can be repated.
@@ -338,7 +347,8 @@ Value objects describe values passed as positional arguments or with an option.
   "valueName": "MYVAL",
   "help": "help text",
   "isDefault": true,
-  "isDeprecated": false
+  "isDeprecated": false,
+  "isExperimental": false
 }
 ```
 
@@ -385,6 +395,9 @@ for this object.
 
 `isDefault` is a boolean describing whether this value is the default value for
 the option this is a value for.
+
+`isDeprecated` and `isExperimental` are booleans describing whether this value
+has been deprecated or is experimental, with similar meaning as for *command objects*.
 
 If multiple of `value`, `dynamic` and `missing` are defined,
 `missing` has the highest precedence, followed by `value` and `dynamic`.
